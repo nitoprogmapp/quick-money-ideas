@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Money Ideas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white">
+    <div class="max-w-xl mx-auto px-6 py-16 text-center">
+        <h1 class="text-5xl font-bold tracking-tighter mb-4">Quick Money Ideas</h1>
+        <p class="text-emerald-400 text-xl">Fresh ideas to make money this week - Free</p>
+
+        <div class="mt-12 bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
+            <button onclick="generateIdea()" class="w-full bg-emerald-500 hover:bg-emerald-600 py-6 rounded-3xl font-bold text-2xl transition-all">
+                Give Me a Fresh Idea
+            </button>
+
+            <div id="result" class="hidden mt-10">
+                <h3 id="title" class="text-3xl font-bold"></h3>
+                <p id="desc" class="mt-5 text-zinc-300 text-lg leading-relaxed"></p>
+                
+                <div class="mt-10 grid grid-cols-2 gap-4">
+                    <button onclick="generateIdea()" class="bg-zinc-800 hover:bg-zinc-700 py-4 rounded-3xl font-medium">
+                        Another Idea
+                    </button>
+                    <button onclick="goToCapture()" class="bg-white text-black py-4 rounded-3xl font-bold">
+                        Get More Ideas →
+                    </button>
+                </div>
+
+                <button onclick="shareOnX()" class="mt-6 w-full border border-zinc-700 hover:bg-zinc-900 py-3 rounded-3xl font-medium">
+                    Share this tool on X
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ideas = [
+            {title: "LeadsLeap + TrafficAdBar Combo", desc: "Run your bot daily for cheap traffic. Create simple tools and drive people to your capture page."},
+            {title: "Micro Product Strategy", desc: "Sell a $27-$47 digital guide or tool. Use LeadsLeap funnel + X for traffic."},
+            {title: "Daily Content Machine", desc: "Post 1 valuable tip every day on X. Link to your capture page consistently."},
+            {title: "Email Autoresponder Power", desc: "Give free value first, then pitch your affiliate offer in LeadsLeap sequence."},
+            {title: "Bot + Tool Loop", desc: "Use your TrafficAdBar bot to promote tools like this. People love free value generators."},
+            {title: "Weekly Offer Rotation", desc: "Promote a different affiliate offer every week using your LeadsLeap autoresponder."}
+        ];
+
+        function generateIdea() {
+            const random = ideas[Math.floor(Math.random() * ideas.length)];
+            document.getElementById('title').innerHTML = random.title;
+            document.getElementById('desc').innerHTML = random.desc;
+            document.getElementById('result').classList.remove('hidden');
+        }
+
+        function goToCapture() {
+            window.open('https://llpgpro.com/9vj8ytny/', '_blank');
+        }
+
+        function shareOnX() {
+            const text = encodeURIComponent("This free tool just gave me a solid money-making idea 🔥 Try it: https://bit.ly/4v6pLjO");
+            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+
